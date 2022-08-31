@@ -1,0 +1,25 @@
+{
+    "database": {
+        "host": "localhost",
+        "port": 27017,
+        "authentication": {
+            "username": "",
+            "password": "",
+            "authentication_db": ""
+        },
+        "server": {
+            "database": "server",
+            "collection": "data"
+        },
+        "talk": {
+            "database": "messages",
+            "collection": "data",
+            "blacklist": "blacklist"
+        }
+
+    },
+    "other": "123"
+
+
+
+}
