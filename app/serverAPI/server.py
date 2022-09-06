@@ -1,22 +1,14 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
-import  sys
-sys.path.insert(0, '../')
-from DB_server.check_requests import DB
-from filter import filter
+import filter
 
-class model_data(BaseModel):
-    package = {"message": ""}
-
-
-APP = FastAPI()
+APP = FastAPI() #Create api object
 
 class server():
-    def __init__(self) -> None:
+    def __init__(self):
         pass
     
-    @APP.post('/sendMessage')
-    def sendMessage(message: str):
+    @APP.post('/sendMessage') #Receive message and return a resonse based in a filter and parameteres
+    def sendMessage(message: str): #to se more check the package filter
         """
         3 Filters
         First filter
@@ -33,8 +25,6 @@ class server():
 
 
         
-
-
 if __name__ == '__main__':
     C = server()
 

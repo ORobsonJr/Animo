@@ -1,3 +1,8 @@
 import sys
-sys.path.insert(0, '../')
-from app.bar.DB_server.check_requests import DB
+sys.path.append('app/var/')
+sys.path.append('../animo/app/serverAPI')
+
+import filter, server, DB_server, var
+#from .. import vars
+
+

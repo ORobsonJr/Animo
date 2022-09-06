@@ -1,13 +1,19 @@
-import telebot, sys
-sys.path.insert(0, '../')
 from requests import post
 from requests.exceptions import ConnectionError
+from . import vars
+
+
 
 class BOT():
+    def __init__(self):
+        #vars().server()
+        self.token = vars().bot_token()
 
     def bot(self):
-        bot = telebot.TeleBot('5590917419:AAERbFP2hpgp8OKLjazPHovkDMg97a60G08') #Connect using API_KEY
+        from telebot import TeleBot
 
+        bot = TeleBot(self.token) #Connect using API_KEY
+        print('[BOT] BOT is working')
         @bot.message_handler(content_types=['text'])
         def start(call):
             print('[BOT]MESSAGE RECEIVED: ',call.text) #Message received by bot
@@ -24,11 +30,6 @@ class BOT():
             except Exception as e:
                 print(f'[ERROR]{e}')
 
-
-
-
-
-            
 
            
         bot.polling(none_stop=False)

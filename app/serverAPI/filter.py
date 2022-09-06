@@ -1,9 +1,9 @@
-from urllib import response
 from pymongo import MongoClient
-import sys
-sys.path.append('../')
-from var.var import vars
-from random import choice
+from random import choice #Variables 
+from sys import path
+path.append('../')
+
+from var import *
 from difflib import SequenceMatcher
 
 
