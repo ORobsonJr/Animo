@@ -1,14 +1,8 @@
-<h1>What ROOT do</h1>
-<p>This path is used to receive requests from microservices</p>
+<h1>Documentation</h1>
 
-<h2>Services</h2>
-<h4>server.py</h4>
-<p>Main file used to receive requests from microservices<p/>
+<h3>server.py</h3>
+<p>This file create the api server</p>
 
-<h4>check_requests.py</h4>
-<p><ul>
-<li>check the authentic of a id</Li>
-<li>check if a unique id is really unique</li>
+<h3>filter.py</h3>
+<p>Receive the message sent by server api e filter this message</p>
 
-</ul></p>
-Receber requisições
