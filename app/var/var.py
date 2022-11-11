@@ -1,21 +1,22 @@
- 
+from sys import exit
 
 class vars():
-    from json import loads
-    try:
-        from os import getcwd
-        
-        with open('app/var/data.json', 'r') as f: #read data.json
-            raw_data = loads(f.read())
+    def __init__(self) -> None:
+        from json import loads
+        try:        
+            with open('/home/linuxlite/animo/app/var/data.json', 'r') as f: #read data.json
+                self.raw_data = loads(f.read())
 
-    except Exception as e:
-        raw_data = e
+        except Exception as e:
+            print("[ERROR] A error happend in a important part of program, unfortunately we need close everything :(\n",e)
+            exit()
+
 
     def database(self):
-        return vars.raw_data['database'] #Return database parameters
+        return self.raw_data['database'] #Return database parameters
     
     def server(self, routeAPI: str = ''):
-        route = vars.raw_data['server'] #Return server api parameters
+        route = self.raw_data['server'] #Return server api parameters
 
         if not routeAPI:
             return route['host']
@@ -24,5 +25,7 @@ class vars():
         return route[routeAPI]
 
     def bot_token(self):
-        data = input("Digite seu token: ")
-        return data
+        with open('app/var/bot_token', 'r') as f:
+            content: str =  f.read() #Get the content
+            return content.replace('\n', '') #Replace the special character
+
