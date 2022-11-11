@@ -1,27 +1,43 @@
-from fastapi import FastAPI
-import filter
+from os.path import abspath, dirname
+from urllib import response
+from fastapi import FastAPI, Query
+from pydantic import BaseModel
+from sys import path
+dir_ = dirname(abspath('app')).split('app')[0]
+path.append(dir_+'/app/AI')
+from machine import AI
+from json import load
+from fastapi import HTTPException
+
 
 APP = FastAPI() #Create api object
+
+
 
 class server():
     def __init__(self):
         pass
-    
+
     @APP.post('/sendMessage') #Receive message and return a resonse based in a filter and parameteres
-    def sendMessage(message: str): #to se more check the package filter
-        """
-        3 Filters
-        First filter
-        Return a random message based on message sent
+    def sendMessage(message: str, context: list = Query(default=None)): #to se more check the package filter
+        a = AI()
 
-        Second filter
-        Try find a similar message to send
+        if context:
+            a.__main__(message, context)
+            
+        return a.__main__(message)
 
-        Thrird filter
-        Learn the message and use a blacklist to avoid bad 
-        words
-        """
-        return filter().randomMessage(message)
+    @APP.post('/learnNew')
+    def learnNew(message: str, response: dict):
+        a = AI()
+        
+
+        att = a.learnNew(message_learn = message,
+        response_ = response)
+
+        if att:
+            raise HTTPException(409, att)
+            
 
 
         
