@@ -1,4 +1,5 @@
-from crud import CRUD 
+#from ai_system import AI
+import ai_system
 
 """
 Main file in /AI
@@ -12,24 +13,15 @@ class AI():
         """
         Call functions from crud file
         """
-        C = CRUD()
+        C = ai_system.AI()
 
         
-        if context:
-            #If context keyword was provided
-            r = C.getMessage(message, context) #Return message
-
-            if not r: #Any result provided
-                nt = C.messageNtFound(message, context) #Message wasn't received
-                return nt
-
-            return r
-
-        #With no keyword context
         r = C.getMessage(message) 
 
         if not r: #Message wasn't received
-            return C.messageNtFound(message)
+            nt = C.messageNtFound(message)
+            print('>>>',nt)
+            return nt
 
         return r
 
