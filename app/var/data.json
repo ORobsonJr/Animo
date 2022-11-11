@@ -19,8 +19,9 @@
 
     },
     "server": {
-        "host": "127.0.0.1:8000",
-        "sendMessage": "/sendMessage"
+        "host": "http://127.0.0.1:8000",
+        "methods": {"sendMessage": "/sendMessage?"
+    }
 
 
     }
