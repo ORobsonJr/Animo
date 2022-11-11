@@ -5,14 +5,21 @@
 * [Arquivos](#arquivos)
 
 ## Pastas
-
-
+<br>
+<br>
 
 ## Arquivos
 ```
 bot.py 
 ```
-Bot do telegram do qual recebe a mensagem, faz o envio da mensagem recebida por HTTP para o servidor [API](../serverAPI/DEVELOPER.md), do qual o faz o processamento interno e retorna uma resposta - normalmente em formato de string e então retorna a resposta recebida do servidor para o usuário.
+Bot do telegram do qual recebe uma menssagem enviada pelo usuário, faz o envio via API, recebe uma resposta, faz o manuseio da mesma e retorna para o usuário.
 
-<bold>Refs.:</bold>
+<br>
+
+```
+crud.py
+```
+Faz requisições HTTP para o servidor API.
+
+<strong>Refs.:</strong>
 Funcionamento do servidor API --> [Clique aqui](../serverAPI/DEVELOPER.md)
