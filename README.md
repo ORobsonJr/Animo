@@ -9,13 +9,13 @@
 
 
 ## Sobre o projeto
-<P>O animo é um chatbot no estilo <a href="https://simsimi.com/">simsimi</a> do qual interage com o usuário através do <a href="https://t.me/animoo_bot">telegram</a> (@animoo_bot), o mesmo utiliza um sistema de AI do qual você pode consultar o funcionamento [Por aqui](app/AI/README.md)
+<P>O animo é um chatbot no estilo <a href="https://simsimi.com/">simsimi</a> do qual interage com o usuário através do <a href="https://t.me/animoo_bot">telegram</a> (@animoo_bot), o mesmo utiliza um sistema de AI.
 </p>
 
 
 ## Tecnologias usadas
 O projeto usa as seguintes tecnologias:
-* Telethon (Biblioteca python para integração com a api do telegram)
+* Telebot (Biblioteca python para integração com a api do telegram)
 * Sistema de AI simples
 * FastAPI como base para o projeto
 * Database mongoDb interno - dessa forma sendo disponível somente a nível de servidor ou seja você não terá acesso nesse caso, somente o proprietário do projeto.
