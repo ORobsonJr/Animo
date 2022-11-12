@@ -4,12 +4,17 @@ from . import server
 from os import system
 from requests.exceptions import ReadTimeout
 from telebot.apihelper import ApiTelegramException
-from sys import exit
+from sys import exit, setrecursionlimit
+import platform
+
+
 
 def server():
-    try: system('cd app/serverAPI/ && uvicorn server:APP --reload') #Run api server
-    except Exception as e:
-        print('[ERRO_SERVER]',e)
+    system('cd app/serverAPI && uvicorn server:APP --reload') #Run api server
+    
+ 
+
+    
 
 def bot():
     try:

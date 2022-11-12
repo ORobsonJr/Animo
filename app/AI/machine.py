@@ -16,12 +16,20 @@ class AI():
         C = ai_system.AI()
 
         
-        r = C.getMessage(message) 
+        if context: r = C.getMessage(message, context)
+        else: r = C.getMessage(message) 
 
         if not r: #Message wasn't received
+            #None received
+            if context:
+                nt = C.messageNtFound(message, context)
+                if nt: return nt
+                else: return 
+
             nt = C.messageNtFound(message)
-            print('>>>',nt)
-            return nt
+            print(nt)
+            if nt: return nt
+            else: return 
 
         return r
 

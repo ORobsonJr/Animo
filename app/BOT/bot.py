@@ -17,7 +17,7 @@ class BOT():
     * Receive message
     * Send these data and requests to api server
     * Api server process data e send another data
-    * Sometimes we make little adjustes or we return it to user in a raw format.
+    * Sometimes we make little adjustes or we return it to user.
 
     """
     def __init__(self):
@@ -157,10 +157,10 @@ class BOT():
 
 
             except ConnectionError:
-                print('[ERROR]     Connection problems')
+                print('[BOT]     Connection problems, check if server is active')
 
-            except Exception as e:
-                print(f'[ERROR]{e}')
+            #except Exception as e:
+            #   print(f'[ERROR_EXCEPTION_BOT]{e}')
 
                 
         bot.polling(none_stop=False) #Create a loop
